@@ -1,3 +1,16 @@
 .hero {
-    background-color: yellow;
+  height: 100vh;
+  position: relative;
+}
+.heroText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+}
+.heroText p {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
 }

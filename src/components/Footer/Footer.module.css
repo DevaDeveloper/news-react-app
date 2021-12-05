@@ -1,3 +1,48 @@
 .footer {
-    background-color: blue;
+  margin: 100px 0;
 }
+
+.first_footer {
+  background: #c2d7fd;
+  width: 650px;
+  padding: 20px 20px 100px 20px;
+}
+.second_footer {
+  background: #c2d7fd;
+  width: 300px;
+  padding: 20px;
+}
+.footer article {
+  display: flex;
+  justify-content: space-around;
+}
+.footer article ul {
+  list-style: none;
+}
+.footer article ul li {
+  margin: 10px 0;
+}
+.footer a {
+  text-decoration: none;
+  color: #666666;
+  transition: all 0.9s ease;
+  font-size: 20px;
+}
+.footer a:hover {
+  color: blue;
+}
+form {
+  display: flex;
+}
+
+/* .footer button {
+  border: none;
+  background: blueviolet;
+  padding: 12px 24px;
+  color: #fff;
+  transition: all 0.4s ease;
+  font-size: 16px;
+}
+.footer button:hover {
+  background: rgb(118, 23, 207);
+} */

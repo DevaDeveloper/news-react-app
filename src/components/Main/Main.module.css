@@ -1,3 +1,64 @@
 .main {
-    background-color: pink;
+  margin: 30px;
+  padding: 0;
+  box-sizing: border-box;
 }
+/*
+Hero list styles
+*/
+.hero_list {
+  padding-left: 64px;
+}
+.catalogList {
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+  font-size: 22px;
+  color: #3399cc;
+}
+.main h1 {
+  color: #666666;
+  font-size: 34px;
+  font-weight: 400;
+}
+.catalogList ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 10px;
+}
+.catalogList ul li {
+  padding: 0 20px;
+}
+.catalogList ul li a {
+  text-decoration: none;
+}
+.catalogList .firstLink {
+  border-bottom: 2px solid #3399cc;
+}
+.catalogList ul li a:hover {
+  border-bottom: 2px solid #3399cc;
+  transition: all 0.3s ease;
+}
+
+/*
+Card components
+*/
+.all_cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+.middle_card {
+  margin: 50px 0px;
+}
+.card_components_one {
+  margin-bottom: 20px;
+}
+
+/*
+background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #666;
+*/
