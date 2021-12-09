@@ -1,3 +1,22 @@
-.card {
-    background-color: green;
+.card ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.card ul img {
+  transition: all 0.4s ease;
+}
+.card ul img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  transform: rotate(2deg);
+  cursor: pointer;
+}
+.card ul li {
+  overflow: hidden;
+}
+.catalogList {
+  width: 90%;
+  margin: 0 auto;
 }

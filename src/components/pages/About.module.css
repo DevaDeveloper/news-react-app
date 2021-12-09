@@ -1,0 +1,28 @@
+.aboutHeading {
+  color: blueviolet;
+  text-align: left;
+  width: 80%;
+  margin: 50px auto;
+}
+.aboutPar {
+  width: 80%;
+  margin: 20px auto;
+  line-height: 40px;
+  font-size: 18px;
+}
+.aboutPageHeading {
+  background-image: url(../img/about-1.jpg);
+  height: 70vh;
+}
+.firstHeadingAbout {
+  text-align: center;
+  margin-top: 50px;
+  cursor: pointer;
+}
+.nextAboutSection {
+  background-image: url(../img/about-2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 40vh;
+}
