@@ -32,75 +32,26 @@ const Navbar = () => {
             <i>
               <FaVideo />
             </i>
-            <h1>Video Catalog</h1>
+            <h1 style={{ color: "#fff" }}>Video Catalog</h1>
           </div>
         </a>
       </div>
 
-      <nav>
-        <nav className={styles.navBar}>
-          <ul>
-            {links.map((link) => {
-              return (
-                <li key={link.id}>
-                  <NavLink to={link.path} activeClassName="active-link" exact>
-                    {link.text}
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </nav>
-      {/*   <div className={styles.navBarList}>
+      <nav className={styles.navBar}>
         <ul>
-          <li>
-            <a className={styles.firstNavElement} href="www.google.com">
-              Videos
-            </a>
-          </li>
-          <li>
-            <a href="www.google.com">About</a>
-          </li>
-          <li>
-            <a href="www.google.com">Contact</a>
-          </li>
+          {links.map((link) => {
+            return (
+              <li key={link.id}>
+                <NavLink to={link.path} activeClassName="active-link" exact>
+                  {link.text}
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
-      </div> */}
+      </nav>
     </div>
   );
 };
 
 export default Navbar;
-
-/*
-const links = [
-    {
-      id: 1,
-      path: '/',
-      text: 'Home',
-    },
-    {
-      id: 2,
-      path: '/about',
-      text: 'About',
-    },
-  ];
-
-  return (
-    <nav className="navBar">
-      <ul>
-        {links.map((link) => {
-          return (
-            <li key={link.id}>
-              <NavLink to={link.path} activeClassName="active-link" exact>
-                {link.text}
-              </NavLink>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-};
-*/

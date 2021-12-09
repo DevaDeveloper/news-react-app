@@ -3,6 +3,9 @@ import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 
 const CardComponent = (props) => {
+  const visitSite = () => {
+    window.open(props.visit);
+  };
   return (
     <div>
       <Card style={{ width: "25rem" /* height: "25rem" */ }}>
@@ -10,7 +13,9 @@ const CardComponent = (props) => {
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>{props.text}</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" onClick={visitSite}>
+            Read more
+          </Button>
         </Card.Body>
       </Card>
     </div>

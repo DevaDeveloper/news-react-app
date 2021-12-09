@@ -4,6 +4,9 @@
   align-items: center;
   padding: 30px 100px;
 }
+nav ul li a {
+  color: #fff;
+}
 h1 {
   color: #fff;
 }
@@ -66,8 +69,10 @@ h1:hover {
 .navBar ul li a {
   text-decoration: none;
   font-size: 32px;
-  color: gray;
+  color: #fff;
 }
+
 .navBar ul li a:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #fff;
+  transition: all 0.4s ease;
 }

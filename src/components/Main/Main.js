@@ -2,66 +2,58 @@ import React from "react";
 import styles from "./Main.module.css";
 import PaginationComponent from "../Pagination/PaginationComponent";
 import Card from "../Card/Card";
-import MainNavbar from "../Navbar/MainNavbar";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Main = () => {
+  const [allNews, setAllNews] = useState([]);
+  const [teslaNews, setTeslaNews] = useState([]);
+  const [appleNews, setAppleNews] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d3978caf8e854578acfd1135c16ae98b"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setAllNews(data.articles.slice(0, 6));
+        console.log(data.articles);
+      });
+
+    //tesla news
+    fetch(
+      "https://newsapi.org/v2/everything?q=tesla&from=2021-11-08&sortBy=publishedAt&apiKey=d3978caf8e854578acfd1135c16ae98b"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setTeslaNews(data.articles.slice(3, 9));
+        console.log(data.articles);
+      });
+
+    //apple news
+    fetch(
+      "https://newsapi.org/v2/everything?q=apple&from=2021-12-07&to=2021-12-07&sortBy=popularity&apiKey=d3978caf8e854578acfd1135c16ae98b"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setAppleNews(data.articles.slice(3, 9));
+        console.log(data.articles);
+      });
+  }, []);
+
   return (
     <div className={styles.main}>
       <div className={styles.hero_list}>
         <h1>Our Video Catalog</h1>
-        <div className={styles.catalogList}>
-          <h3>Categories:</h3>
-
-          <MainNavbar />
-          {/*  <li>
-              <a className={styles.firstLink} href="www.google.com">
-                All
-              </a>
-            </li>
-            <li>
-              <a href="www.google.com">Drone Shots</a>
-            </li>
-            <li>
-              <a href="www.google.com">Nature</a>
-            </li>
-            <li>
-              <a href="www.google.com">Actions</a>
-            </li>
-            <li>
-              <a href="www.google.com">Featured</a>
-            </li> */}
-        </div>
       </div>
 
-      <Card />
-
-      {/*  <div className={styles.all_cards}>
-        <div className={styles.card_components_one}>
-          <div>
-            <CardComponent />
-          </div>
-          <div className={styles.middle_card}>
-            <CardComponent />
-          </div>
-          <div>
-            <CardComponent />
-          </div>
-        </div>
-        <div className={styles.card_components_one}>
-          <CardComponent />
-          <div className={styles.middle_card}>
-            <CardComponent />
-          </div>
-          <CardComponent />
-        </div>
-        <div className={styles.card_components_one}>
-          <CardComponent />
-          <div className={styles.middle_card}>
-            <CardComponent />
-          </div>
-          <CardComponent />
-        </div>
-      </div> */}
+      <Card allNews={allNews} teslaNews={teslaNews} appleNews={appleNews} />
 
       <div>
         <PaginationComponent />

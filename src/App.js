@@ -6,9 +6,6 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
-import FirstPage from "./components/pages/MainPages/FirstPage";
-import SecondPage from "./components/pages/MainPages/SecondPage";
-import ThirdPage from "./components/pages/MainPages/ThirdPage";
 
 function App() {
   return (
@@ -27,15 +24,6 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact />
-        </Route>
-        <Route path="/firstpage">
-          <FirstPage />
-        </Route>
-        <Route path="/secondpage">
-          <SecondPage />
-        </Route>
-        <Route path="/thirdpage">
-          <ThirdPage />
         </Route>
       </Switch>
     </>

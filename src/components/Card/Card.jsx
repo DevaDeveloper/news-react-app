@@ -1,45 +1,86 @@
-import React from "react";
+import { React, useState } from "react";
 import styles from "./Card.module.css";
 import CardComponent from "../Card/CardComponent";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
 
-function Card() {
-  const cards = [
-    {
-      id: "e1",
-      title: "First Card",
-      text: "Drone text in first card",
-      src: "https://economictimes.indiatimes.com/thumb/msid-85649831,width-1200,height-900,resizemode-4,imgsize-35746/drone-rules.jpg?from=mdr",
-    },
-    {
-      id: "e2",
-      title: "Second Card",
-      text: "Tesla motors",
-      src: "https://www.bug.hr/img/najavljena-nova-jeftina-tesla-narodski-auto-za-25000-usd_69Llk8.jpg",
-    },
-    {
-      id: "e3",
-      title: "Third Card",
-      text: "Ford",
-      src: "https://www.vmax.si/wp-content/uploads/2021/02/Ford-F-150-Raptor-1.jpg?is-pending-load=1",
-    },
-  ];
+function Card(props) {
+  const [key, setKey] = useState("home");
 
   return (
-    <div className={styles.card}>
-      <ul>
-        {cards.map((card) => {
-          return (
-            <li key={card.id}>
-              <CardComponent
-                id={card.id}
-                title={card.title}
-                text={card.text}
-                src={card.src}
-              />
-            </li>
-          );
-        })}
-      </ul>
+    <div>
+      <div className={styles.catalogList}>
+        <h3>Categories:</h3>
+
+        <nav>
+          <Tabs
+            id="controlled-tab-example"
+            activeKey={key}
+            onSelect={(k) => setKey(k)}
+            className="mb-3"
+          >
+            <Tab eventKey="home" title="All">
+              <div className={styles.card}>
+                <ul>
+                  {props.allNews.map((card) => {
+                    return (
+                      <li key={card.id}>
+                        <CardComponent
+                          id={card.id}
+                          title={card.title}
+                          text={card.description}
+                          src={card.urlToImage}
+                          visit={card.url}
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </Tab>
+
+            <Tab eventKey="profile" title="Tesla">
+              <div className={styles.card}>
+                <ul>
+                  {props.teslaNews.map((card) => {
+                    return (
+                      <li key={card.id}>
+                        <CardComponent
+                          id={card.id}
+                          title={card.title}
+                          text={card.description}
+                          src={card.urlToImage}
+                          visit={card.url}
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </Tab>
+
+            <Tab eventKey="contact" title="Apple">
+              <div className={styles.card}>
+                <ul>
+                  {props.appleNews.map((card) => {
+                    return (
+                      <li key={card.id}>
+                        <CardComponent
+                          id={card.id}
+                          title={card.title}
+                          text={card.description}
+                          src={card.urlToImage}
+                          visit={card.url}
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </Tab>
+          </Tabs>
+        </nav>
+      </div>
     </div>
   );
 }

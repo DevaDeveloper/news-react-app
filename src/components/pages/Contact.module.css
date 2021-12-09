@@ -1,0 +1,49 @@
+.contactHeading {
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+.contactHolder {
+  display: flex;
+}
+
+header {
+  background-image: url(../img/contact-1.jpg);
+  background-attachment: fixed;
+  height: 70vh;
+}
+.contactMaps {
+  margin-left: 15px;
+}
+.contactSelect select {
+  width: 442px;
+  padding: 12px 18px;
+}
+.contactFormHolder {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.contactForm {
+  display: flex;
+  flex-direction: column;
+}
+.contactForm div {
+  margin-bottom: 20px;
+}
+.contactForm div textarea {
+  width: 442px;
+  padding: 12px 18px;
+}
+.contactForm input {
+  padding: 12px 18px;
+  width: 442px;
+}
+
+.nextContactSection {
+  background-image: url(../img/contact-2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 40vh;
+}
